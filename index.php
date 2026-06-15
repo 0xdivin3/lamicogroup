@@ -5,7 +5,8 @@ require_once 'includes/header.php';
 require_once 'includes/db.php';
 
 // Fetch services and testimonials from DB
-$services     = $pdo->query('SELECT * FROM services WHERE active=1 ORDER BY order_num ASC')->fetchAll();
+
+$services = $pdo->query('SELECT * FROM services WHERE active=1 ORDER BY order_num ASC LIMIT 4')->fetchAll();
 $testimonials = $pdo->query('SELECT * FROM testimonials WHERE active=1 ORDER BY id ASC LIMIT 3')->fetchAll();
 ?>
 
